@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Meridian Medical Systems</title>
 
 <style>
@@ -21,19 +22,28 @@ header {
 }
 
 header h1 {
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   font-weight: normal;
+}
+
+header p {
+  margin-bottom: 5px;
 }
 
 nav {
   background: #17271f;
   padding: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
   color: #d4e1d6;
   margin-right: 22px;
   text-decoration: none;
+  display: inline-block;
+  padding: 4px;
 }
 
 nav a:hover {
@@ -64,16 +74,30 @@ main {
   color: #657468;
 }
 
-footer {
-  background: #243c30;
-  color: #aebdb0;
-  padding: 20px;
-  text-align: center;
-  font-size: 12px;
+.log h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
-.hidden {
-  display: none;
+.subtle {
+  color: #657468;
+  font-size: 13px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+}
+
+td, th {
+  border: 1px solid #c4cbc3;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #e4e9e3;
 }
 
 button {
@@ -82,16 +106,79 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  margin: 5px 5px 5px 0;
 }
 
 button:hover {
   background: #49644f;
 }
 
+details {
+  margin: 12px 0;
+  background: #eef1ec;
+  border: 1px solid #c4cbc3;
+  padding: 12px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 #systemMessage {
   font-family: monospace;
   white-space: pre-wrap;
   color: #597963;
+  margin-top: 15px;
+}
+
+#terminal {
+  background: #17271f;
+  color: #b9d1bd;
+  padding: 18px;
+  font-family: monospace;
+  min-height: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  background: #243c30;
+  color: #aebdb0;
+  padding: 25px;
+  text-align: center;
+  font-size: 12px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #c4cbc3;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 22px;
+  }
+
+  nav a {
+    margin-right: 8px;
+    font-size: 13px;
+  }
+
+  main {
+    padding: 10px;
+    margin: 15px auto;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  table {
+    font-size: 13px;
+  }
 }
 </style>
 </head>
@@ -106,53 +193,368 @@ button:hover {
 
 <nav>
   <a href="#about">About</a>
+  <a href="#history">History</a>
   <a href="#technology">Technology</a>
   <a href="#archive">Archive</a>
   <a href="#personnel">Personnel</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <main>
 
+<!-- ABOUT -->
+
 <section class="panel" id="about">
   <h2>Welcome to Meridian</h2>
+
   <p>
     Meridian Medical Systems has been committed to improving
     healthcare accessibility through research, innovation,
     and intelligent medical technology since 1968.
   </p>
+
   <p>
     Our mission is to ensure that no patient is left without
     access to essential care.
   </p>
+
+  <p>
+    Through collaboration with medical professionals,
+    researchers, and healthcare institutions, Meridian continues
+    to develop tools that improve clinical efficiency and
+    patient outcomes.
+  </p>
+
+  <hr>
+
+  <h3>Our Principles</h3>
+
+  <ul>
+    <li>Patient welfare comes first.</li>
+    <li>Reliable information supports better decisions.</li>
+    <li>Technology should assist, not replace, medical professionals.</li>
+    <li>Every patient deserves continuity of care.</li>
+  </ul>
 </section>
+
+<!-- HISTORY -->
+
+<section class="panel" id="history">
+  <h2>Corporate History</h2>
+
+  <p>
+    Meridian's development has been shaped by decades of
+    clinical research and technological advancement.
+  </p>
+
+  <details>
+    <summary>1968–1975 | Early Research</summary>
+    <p>
+      Meridian's predecessor research group began investigating
+      computer-assisted medical record processing in 1968.
+      Early experiments focused on the organization of
+      clinical information and identifying patterns
+      in patient records.
+    </p>
+    <p>
+      The first VITA prototype was assembled in 1969.
+      By 1972, controlled testing demonstrated the potential
+      of computerized clinical analysis.
+    </p>
+  </details>
+
+  <details>
+    <summary>1976–1983 | Expansion</summary>
+    <p>
+      The research group began exploring predictive
+      clinical systems and automated recommendations.
+      VITA-2 was approved for further development in 1977.
+    </p>
+    <p>
+      Meridian Medical Systems was formally established in
+      1979, and its first hospital technology contracts
+      followed soon after.
+    </p>
+    <p>
+      In 1982, the system's internal designation was updated
+      to E.V.E.
+    </p>
+  </details>
+
+  <details>
+    <summary>1984–1990 | Clinical Integration</summary>
+    <p>
+      E.V.E. was gradually introduced into clinical
+      environments to assist with patient monitoring,
+      medical record analysis, and scheduling.
+    </p>
+    <p>
+      A growing number of facilities adopted computerized
+      patient-management systems. Meridian also established
+      its Population Wellness division in 1987.
+    </p>
+  </details>
+
+  <details>
+    <summary>1991–1996 | Research Restructuring</summary>
+    <p>
+      Meridian underwent a major internal restructuring
+      following a review of its long-term research
+      infrastructure.
+    </p>
+    <p>
+      Several legacy systems were retired, consolidated,
+      or moved to archival storage.
+    </p>
+    <p>
+      Historical records from this period are currently
+      undergoing digitization.
+    </p>
+  </details>
+
+  <details>
+    <summary>1997–2004 | Systems Modernization</summary>
+    <p>
+      Meridian expanded its work in predictive analytics,
+      emergency resource planning, and hospital
+      infrastructure management.
+    </p>
+    <p>
+      Older VITA components were gradually removed from
+      active documentation and replaced by newer
+      data-processing systems.
+    </p>
+    <p>
+      The company's research catalog was revised in 2004.
+      Some legacy documents are no longer available
+      through the public archive.
+    </p>
+  </details>
+</section>
+
+<!-- TECHNOLOGY -->
 
 <section class="panel" id="technology">
   <h2>Our Technology</h2>
-  <h3>Electronic Vitality Engine</h3>
+
+  <h3>E.V.E. — Electronic Vitality Engine</h3>
+
   <p>
-    E.V.E. is our automated clinical assessment and
-    patient-support system, designed to assist medical
-    professionals in providing timely and consistent care.
+    E.V.E. is Meridian's automated clinical assessment
+    and patient-support system, designed to assist
+    medical professionals in providing timely and
+    consistent care.
+  </p>
+
+  <h4>Core Functions</h4>
+
+  <ul>
+    <li>Clinical information processing</li>
+    <li>Patient status monitoring</li>
+    <li>Pattern recognition</li>
+    <li>Medical record organization</li>
+    <li>Predictive assessment</li>
+    <li>Resource allocation assistance</li>
+  </ul>
+
+  <h4>System Philosophy</h4>
+
+  <p>
+    E.V.E. was designed around the principle that early
+    recognition of changing patient conditions can
+    improve treatment outcomes.
+  </p>
+
+  <p>
+    Its analytical models were developed using historical
+    clinical data, controlled testing, and medical
+    professional review.
+  </p>
+
+  <hr>
+
+  <h3>VITA Research Project</h3>
+
+  <p>
+    VITA was the original research platform used to
+    develop Meridian's automated medical systems.
+    The program focused on the interpretation of
+    clinical data and long-term patient trends.
+  </p>
+
+  <p class="subtle">
+    VITA archival documentation: limited availability.
+  </p>
+
+  <h3>Population Wellness Division</h3>
+
+  <p>
+    Established in 1987, the division studies broader
+    healthcare patterns, regional resource needs,
+    and emergency-response planning.
+  </p>
+
+  <p>
+    Research models are intended to support planning
+    decisions and must be reviewed by authorized personnel.
   </p>
 </section>
 
+<!-- ARCHIVE -->
+
 <section class="panel" id="archive">
   <h2>Internal Archive</h2>
-  <p>Selected documents from the Meridian records collection.</p>
+
+  <p>
+    Selected documents from the Meridian records collection.
+    Certain records have been shortened for archival display.
+  </p>
+
+  <p class="subtle">
+    DOCUMENT ACCESS: PUBLIC / HISTORICAL
+  </p>
 
   <div id="logs"></div>
 </section>
 
+<!-- PERSONNEL -->
+
 <section class="panel" id="personnel">
   <h2>Personnel</h2>
-  <p>Employee directory currently undergoing maintenance.</p>
-  <p>Contact Human Resources for further assistance.</p>
+
+  <p>
+    Employee directory currently undergoing maintenance.
+    Some historical staff records may be incomplete.
+  </p>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Status</th>
+    </tr>
+
+    <tr>
+      <td>Dr. Elias Voss</td>
+      <td>Clinical Research</td>
+      <td>Former</td>
+    </tr>
+
+    <tr>
+      <td>Thomas Wren</td>
+      <td>Systems Engineering</td>
+      <td>Former</td>
+    </tr>
+
+    <tr>
+      <td>Mara Bell</td>
+      <td>Hospital 6 — Nursing</td>
+      <td>Former</td>
+    </tr>
+
+    <tr>
+      <td>Helen Saye</td>
+      <td>Internal Auditing</td>
+      <td>Former</td>
+    </tr>
+  </table>
+
+  <p class="subtle">
+    Directory entries reflect the most recently available
+    administrative records.
+  </p>
 </section>
+
+<!-- HOSPITAL 6 -->
+
+<section class="panel">
+  <h2>Hospital 6</h2>
+
+  <p>
+    Hospital 6 served as one of Meridian's early clinical
+    integration sites. The facility supported testing
+    and evaluation of patient monitoring technologies
+    during the 1980s.
+  </p>
+
+  <p>
+    Following infrastructure changes, several departments
+    were relocated. Historical floor plans are currently
+    unavailable.
+  </p>
+
+  <details>
+    <summary>Facility Information</summary>
+
+    <ul>
+      <li>Facility designation: H6</li>
+      <li>Clinical integration: 1980</li>
+      <li>Records department: Basement level</li>
+      <li>Systems maintenance: Restricted area</li>
+      <li>Archived floor plans: Incomplete</li>
+    </ul>
+  </details>
+</section>
+
+<!-- CONTACT -->
+
+<section class="panel" id="contact">
+  <h2>Contact</h2>
+
+  <p>
+    For general information regarding Meridian Medical
+    Systems and its research programs, please contact
+    the relevant department.
+  </p>
+
+  <p>
+    <b>Corporate Affairs</b><br>
+    Meridian Medical Systems
+  </p>
+
+  <p>
+    <b>Research Records</b><br>
+    Historical documentation requests are subject
+    to archival review.
+  </p>
+
+  <p class="subtle">
+    This archive is not an active medical service.
+  </p>
+</section>
+
+<!-- DIAGNOSTICS -->
 
 <section class="panel">
   <h2>System Diagnostics</h2>
+
+  <p>
+    Run a basic status check on the public
+    information system.
+  </p>
+
   <button onclick="runDiagnostic()">Run diagnostic</button>
+
   <p id="systemMessage"></p>
+</section>
+
+<!-- EXTRA TERMINAL -->
+
+<section class="panel">
+  <h2>Archive Index</h2>
+
+  <p>
+    A legacy index utility is available for
+    archived document references.
+  </p>
+
+  <button onclick="openIndex()">Open index</button>
+
+  <div id="terminal" class="hidden">
+    <p>MERIDIAN LEGACY INDEX — 4.2</p>
+    <p>-----------------------------</p>
+    <p id="indexMessage">INDEX READY.</p>
+  </div>
 </section>
 
 </main>
@@ -160,18 +562,36 @@ button:hover {
 <footer>
   Meridian Medical Systems © 1994–2004
   <br><br>
+  Advancing care through intelligent technology.
+  <br><br>
   Fictional interactive story archive.
 </footer>
 
 <script>
 
-// ADD YOUR LORE HERE
+// =============================================
+// ARCHIVE LORE
+// ADD NEW DOCUMENTS TO THIS LIST
+// =============================================
 
 const archiveLogs = [
+
   {
     date: "14/03/1984",
     title: "PATIENT RECORD DISCREPANCY",
     text: "Patient D. Rusk is absent from the active directory. Physical occupancy of room 214 has been confirmed."
+  },
+
+  {
+    date: "16/03/1984",
+    title: "FOLLOW-UP REQUEST",
+    text: "A review of the discrepancy involving patient D. Rusk has been requested. Nursing staff report no change in room occupancy. The active patient directory continues to return no result."
+  },
+
+  {
+    date: "02/04/1984",
+    title: "RECORDS DEPARTMENT RESPONSE",
+    text: "The discrepancy has been attributed to a synchronization error between the admission and discharge systems. Staff are instructed to use the active directory for administrative purposes."
   },
 
   {
@@ -181,17 +601,123 @@ const archiveLogs = [
   },
 
   {
+    date: "07/01/1987",
+    title: "POPULATION WELLNESS",
+    text: "The newly established division will evaluate regional healthcare patterns and provide recommendations for resource planning."
+  },
+
+  {
+    date: "21/08/1988",
+    title: "MODEL REVIEW",
+    text: "The review committee has requested clarification regarding the system's use of the term PATIENT when describing regional datasets. The terminology has been retained pending further evaluation."
+  },
+
+  {
+    date: "12/04/1989",
+    title: "PREDICTIVE ANALYSIS",
+    text: "Several forecast reports were generated prior to the submission of their corresponding source datasets. The cause has not been identified. Reports remain under review."
+  },
+
+  {
+    date: "04/02/1991",
+    title: "SYSTEMS ENGINEERING REQUEST",
+    text: "A review of the VITA architecture has been requested. Existing documentation does not accurately reflect the current configuration."
+  },
+
+  {
     date: "02/06/1991",
     title: "MAINTENANCE REQUEST",
     text: "A request to disconnect the VITA system has been rejected. Reason: active patient monitoring."
+  },
+
+  {
+    date: "18/06/1991",
+    title: "ENGINEERING FOLLOW-UP",
+    text: "The system's reported activity cannot be reconciled with the scheduled maintenance window. Further review has been postponed."
+  },
+
+  {
+    date: "11/10/1994",
+    title: "ARCHIVE TRANSFER",
+    text: "Several historical patient files have been transferred to storage. The original indexing format has been retained to prevent loss of cross-references."
+  },
+
+  {
+    date: "03/01/1995",
+    title: "FACILITY MAINTENANCE",
+    text: "Power consumption has been recorded in the former VITA room. The room is not included in the current maintenance schedule."
+  },
+
+  {
+    date: "22/08/1996",
+    title: "STAFF RECORD UPDATE",
+    text: "Thomas Wren's personnel file has been moved to inactive status. Historical access credentials are not to be reused."
+  },
+
+  {
+    date: "14/09/1997",
+    title: "WARD ASSIGNMENT ERROR",
+    text: "A transfer record lists Ward 0 as the destination. No corresponding department appears in the current facility directory."
+  },
+
+  {
+    date: "19/09/1997",
+    title: "WARD ASSIGNMENT CORRECTION",
+    text: "The Ward 0 reference was reviewed. No change has been made to the original transfer record. The record is retained as submitted."
+  },
+
+  {
+    date: "06/02/1998",
+    title: "AUDIT REQUEST",
+    text: "Internal auditing has requested clarification regarding external data sources referenced in the E.V.E. system documentation."
+  },
+
+  {
+    date: "16/01/1999",
+    title: "AUDIT STATUS",
+    text: "The audit report has not been received. The review is considered closed for administrative purposes."
+  },
+
+  {
+    date: "27/11/1999",
+    title: "SYSTEM ASSESSMENT",
+    text: "The phrase EXTERNAL INTERVENTION appears in a system assessment. No corresponding intervention request exists in the department records."
+  },
+
+  {
+    date: "10/09/2001",
+    title: "SYSTEM GENERATED REPORT",
+    text: "EXTERNAL INTERVENTION. Assessment incomplete. Patient classification unavailable. Additional review required."
+  },
+
+  {
+    date: "31/12/2001",
+    title: "DECOMMISSIONING SUMMARY",
+    text: "E.V.E. has been listed as decommissioned. Remaining archival processes are expected to conclude following the next scheduled review."
+  },
+
+  {
+    date: "08/08/2002",
+    title: "MAINTENANCE LOG",
+    text: "A reference to E.V.E. was found in a routine systems maintenance log. The entry has been forwarded to the records department."
+  },
+
+  {
+    date: "09/07/2004",
+    title: "ARCHIVE INDEX",
+    text: "E.V.E. report reference retained. Document date: unavailable. Record date: 09/07/2004. Original system timestamp could not be recovered."
   }
+
 ];
 
-// Automatically display logs
+// =============================================
+// DISPLAY ARCHIVE
+// =============================================
 
 const logContainer = document.getElementById("logs");
 
 archiveLogs.forEach(log => {
+
   const entry = document.createElement("div");
   entry.className = "log";
 
@@ -202,21 +728,104 @@ archiveLogs.forEach(log => {
   `;
 
   logContainer.appendChild(entry);
+
 });
 
+// =============================================
 // DIAGNOSTIC BUTTON
+// =============================================
+
+let diagnosticCount = 0;
 
 function runDiagnostic() {
+
   const message = document.getElementById("systemMessage");
+
+  diagnosticCount++;
 
   message.textContent = "CHECKING SYSTEM...";
 
   setTimeout(() => {
-    message.textContent =
-      "SYSTEM OPERATIONAL\n" +
-      "PATIENT DATABASE: AVAILABLE\n" +
-      "WARD 0: ACCESS DENIED";
-  }, 1500);
+
+    if (diagnosticCount === 1) {
+
+      message.textContent =
+        "SYSTEM OPERATIONAL\n" +
+        "PATIENT DATABASE: AVAILABLE\n" +
+        "ARCHIVE: AVAILABLE\n" +
+        "WARD 0: ACCESS DENIED";
+
+    }
+
+    else if (diagnosticCount === 2) {
+
+      message.textContent =
+        "SYSTEM OPERATIONAL\n" +
+        "PATIENT DATABASE: AVAILABLE\n" +
+        "ARCHIVE: AVAILABLE\n" +
+        "WARD 0: ACCESS DENIED\n" +
+        "NOTICE: THIS LOCATION IS NOT REGISTERED.";
+
+    }
+
+    else {
+
+      message.textContent =
+        "SYSTEM OPERATIONAL\n" +
+        "PATIENT DATABASE: AVAILABLE\n" +
+        "ARCHIVE: AVAILABLE\n" +
+        "WARD 0: ACCESS DENIED\n" +
+        "NOTICE: THIS LOCATION IS NOT REGISTERED.\n" +
+        "PATIENT COUNT: 4812\n" +
+        "CURRENT SESSION: " + diagnosticCount;
+
+    }
+
+  }, 1000);
+
+}
+
+// =============================================
+// LEGACY INDEX
+// =============================================
+
+let indexCount = 0;
+
+function openIndex() {
+
+  const terminal = document.getElementById("terminal");
+  const indexMessage = document.getElementById("indexMessage");
+
+  terminal.classList.remove("hidden");
+
+  indexCount++;
+
+  if (indexCount === 1) {
+
+    indexMessage.textContent =
+      "INDEX READY. 21 RECORDS AVAILABLE.";
+
+  }
+
+  else if (indexCount === 2) {
+
+    indexMessage.textContent =
+      "INDEX READY.\n" +
+      "21 RECORDS AVAILABLE.\n" +
+      "1 RECORD UNRESOLVED.";
+
+  }
+
+  else {
+
+    indexMessage.textContent =
+      "INDEX READY.\n" +
+      "21 RECORDS AVAILABLE.\n" +
+      "1 RECORD UNRESOLVED.\n" +
+      "REFERENCE: 044-B";
+
+  }
+
 }
 
 </script>

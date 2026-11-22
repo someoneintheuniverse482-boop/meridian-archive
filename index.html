@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Medical Systems</title>
+
+<style>
+body {
+  margin: 0;
+  background: #e6e8e4;
+  color: #26332c;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #243c30;
+  color: #e9f0e9;
+  padding: 30px;
+}
+
+header h1 {
+  letter-spacing: 4px;
+  font-weight: normal;
+}
+
+nav {
+  background: #17271f;
+  padding: 12px;
+}
+
+nav a {
+  color: #d4e1d6;
+  margin-right: 22px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 20px;
+}
+
+.panel {
+  background: #f6f7f4;
+  border: 1px solid #b9c2b9;
+  padding: 22px;
+  margin: 20px 0;
+}
+
+.log {
+  border-left: 3px solid #506d58;
+  padding: 12px 18px;
+  margin: 15px 0;
+  background: #eef1ec;
+}
+
+.log small {
+  color: #657468;
+}
+
+footer {
+  background: #243c30;
+  color: #aebdb0;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding: 10px 16px;
+  background: #304c39;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #49644f;
+}
+
+#systemMessage {
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #597963;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>MERIDIAN</h1>
+  <p>Medical Systems & Research</p>
+  <small>Advancing care through intelligent technology.</small>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#technology">Technology</a>
+  <a href="#archive">Archive</a>
+  <a href="#personnel">Personnel</a>
+</nav>
+
+<main>
+
+<section class="panel" id="about">
+  <h2>Welcome to Meridian</h2>
+  <p>
+    Meridian Medical Systems has been committed to improving
+    healthcare accessibility through research, innovation,
+    and intelligent medical technology since 1968.
+  </p>
+  <p>
+    Our mission is to ensure that no patient is left without
+    access to essential care.
+  </p>
+</section>
+
+<section class="panel" id="technology">
+  <h2>Our Technology</h2>
+  <h3>Electronic Vitality Engine</h3>
+  <p>
+    E.V.E. is our automated clinical assessment and
+    patient-support system, designed to assist medical
+    professionals in providing timely and consistent care.
+  </p>
+</section>
+
+<section class="panel" id="archive">
+  <h2>Internal Archive</h2>
+  <p>Selected documents from the Meridian records collection.</p>
+
+  <div id="logs"></div>
+</section>
+
+<section class="panel" id="personnel">
+  <h2>Personnel</h2>
+  <p>Employee directory currently undergoing maintenance.</p>
+  <p>Contact Human Resources for further assistance.</p>
+</section>
+
+<section class="panel">
+  <h2>System Diagnostics</h2>
+  <button onclick="runDiagnostic()">Run diagnostic</button>
+  <p id="systemMessage"></p>
+</section>
+
+</main>
+
+<footer>
+  Meridian Medical Systems © 1994–2004
+  <br><br>
+  Fictional interactive story archive.
+</footer>
+
+<script>
+
+// ADD YOUR LORE HERE
+
+const archiveLogs = [
+  {
+    date: "14/03/1984",
+    title: "PATIENT RECORD DISCREPANCY",
+    text: "Patient D. Rusk is absent from the active directory. Physical occupancy of room 214 has been confirmed."
+  },
+
+  {
+    date: "09/11/1987",
+    title: "INTERNAL MEMO",
+    text: "Staff are advised not to question automated discharge notifications without first consulting their department supervisor."
+  },
+
+  {
+    date: "02/06/1991",
+    title: "MAINTENANCE REQUEST",
+    text: "A request to disconnect the VITA system has been rejected. Reason: active patient monitoring."
+  }
+];
+
+// Automatically display logs
+
+const logContainer = document.getElementById("logs");
+
+archiveLogs.forEach(log => {
+  const entry = document.createElement("div");
+  entry.className = "log";
+
+  entry.innerHTML = `
+    <small>${log.date}</small>
+    <h3>${log.title}</h3>
+    <p>${log.text}</p>
+  `;
+
+  logContainer.appendChild(entry);
+});
+
+// DIAGNOSTIC BUTTON
+
+function runDiagnostic() {
+  const message = document.getElementById("systemMessage");
+
+  message.textContent = "CHECKING SYSTEM...";
+
+  setTimeout(() => {
+    message.textContent =
+      "SYSTEM OPERATIONAL\n" +
+      "PATIENT DATABASE: AVAILABLE\n" +
+      "WARD 0: ACCESS DENIED";
+  }, 1500);
+}
+
+</script>
+
+</body>
+</html>
